@@ -7,13 +7,13 @@ import (
 	"github.com/gin-gonic/gin"
 )
 
-func main(){
+func main() {
 
-	router := gin.Default();
-	router.Static("/assets", "./assets");
-	router.LoadHTMLFiles("./templates/app.html");
+	router := gin.Default()
+	router.Static("/assets", "./assets")
+	router.LoadHTMLFiles("./templates/app.html")
 
-	router.GET("/", func(c *gin.Context){
+	router.GET("/", func(c *gin.Context) {
 		c.HTML(http.StatusOK, "app.html", gin.H{
 			"message": "Hypersonic Inc",
 		})
